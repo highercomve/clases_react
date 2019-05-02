@@ -1,12 +1,31 @@
 import React from 'react';
 
-export default function List ({ items = [] }) {
+function Item ({ item, updateItem }) {
+  const onClickHanlder = (event) => {
+    updateItem({
+      ...item,
+      status: !item.status
+    })
+  }
+  return (
+    <div className="todo-item">
+      a{item.text} b - {item.status}c
+     
+      <input
+        type="checkbox"
+        name={item.text + item.status}
+        checked={item.status}
+        onChange={onClickHanlder}
+      />     
+    </div>
+  )
+}
+
+export default function List ({ items = [], updateItem }) {
   return (
     <section className="todo-list">
       {items.map((item) => (
-        <div key={item.id} className="todo-item">
-          {item.text} - {item.state}
-        </div>
+        <Item key={item.id} item={item} updateItem={updateItem} />
       ))}
     </section>
   )

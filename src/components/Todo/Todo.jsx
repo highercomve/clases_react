@@ -3,9 +3,9 @@ import List from '../List/List';
 import NewItem from '../NewItem/NewItem';
 import uuid from "uuid";
 
-const TodoStates = {
-  UNDONE: "UNDONE",
-  DONE: "DONE",
+export const TodoStates = {
+  UNDONE: false,
+  DONE: true,
 }
 
 export default class Todo extends React.Component {
@@ -27,7 +27,7 @@ export default class Todo extends React.Component {
     this.setState({
       items: [
         ...this.state.items,
-        { id: uuid.v4(), text, state: TodoStates.UNDONE },
+        { id: uuid.v4(), text, status: TodoStates.UNDONE },
       ]
     })
   }
@@ -59,7 +59,12 @@ export default class Todo extends React.Component {
         <NewItem
           addItem={this.addItem}
         />
-        <List items={this.state.items} />
+        <hr/>
+        ################################
+        <List
+          items={this.state.items}
+          updateItem={this.updateItem}
+        />
       </section>
     )
   }
