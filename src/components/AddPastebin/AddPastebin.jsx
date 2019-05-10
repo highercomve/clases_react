@@ -1,4 +1,5 @@
 import React from 'react';
+import FormPastebin from '../FormPastebin/FormPastebin';
 // import List from '../List/List';
 // import NewItem from '../NewItem/NewItem';
 // import uuid from "uuid";
@@ -56,6 +57,7 @@ export default class AddPastebin extends React.Component {
     return (
       <section className="formulario">
        Formulario:
+       <FormPastebin/>
       </section>
     )
   }
