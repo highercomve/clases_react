@@ -1,17 +1,17 @@
 import React from 'react';
-// import Todo from './components/Todo/Todo';
+import 'bootstrap/dist/css/bootstrap.css';
+
+
+
+// import logo from './logo.svg';
+//import './App.css';
 import AppRouter from './router/AppRouter';
 
 function App() {
-  return (
-    <div className="app">
-      <header className="app-header">
-        Esto es una application en React
-      </header>
-      {/* <Todo /> */}
-      <AppRouter/>
-    </div>
+  return (   
+      <div className="container">
+        <AppRouter />
+      </div>
   );
 }
-
 export default App;
